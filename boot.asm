@@ -1,37 +1,42 @@
 [org 0x7c00]
+[bits 16]
+
+section .text
+	global main
+	
+main:
+
+jmp 0x000:ZeroSeg
+ZeroSeg:
+	xor ax, ax
+	mov ss, ax
+	mov ds, ax
+	mov es, ax
+	mov fs, ax
+	mov gs, ax
+	mov sp, main
+	cld
+sti
 
 push ax
-mov ax, 0x4fe3
-mov es, ax 
+xor ax, ax
 pop ax
 
-mov ax, [0x1234d]
+;code
 
-mov si, STR
+call readDisk
+
+mov si, STRING
 call printf
-
 
 jmp $
 
-printf:
-	
-	pusha
-	str_loop:
-		mov al, [si]
-		cmp al, 0
-		jne print_char
-		popa
-		ret
+;includes
+%include "./librarys/printf.asm"
+%include "./librarys/readDisk.asm"
 
-	print_char:
-		mov ah, 0x0e
-		int 0x10
-		add si, 1
-		jmp str_loop
-
-STR: db "shit is fucked up", 0
-
-
+;varibles
+STRING: db 'Boot initilization complete!', 0
 
 ;padding and magic number
 times 510-($-$$) db 0
