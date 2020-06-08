@@ -1,6 +1,5 @@
-boot.bin:boot.asm librarys/readDisk.asm librarys/printf.asm
+boot.bin:boot.asm librarys/printf.asm librarys/printh.asm
 	nasm -fbin boot.asm -o boot.bin
-	qemu-system-x86_64 boot.bin
 
 clean:
 	rm boot.bin

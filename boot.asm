@@ -6,6 +6,7 @@ section .text
 	
 main:
 
+cli
 jmp 0x000:ZeroSeg
 ZeroSeg:
 	xor ax, ax
@@ -24,19 +25,37 @@ pop ax
 
 ;code
 
-call readDisk
 
-mov si, STRING
+mov si, NEWLINE
 call printf
+
+mov si, LOADING
+call printf
+
+mov si, NEWLINE
+call printf
+
+mov si, NEWLINE
+call printf
+
+mov si, NEWLINE
+call printf
+
+mov si, PHRASE
+call printf
+
+
 
 jmp $
 
 ;includes
 %include "./librarys/printf.asm"
-%include "./librarys/readDisk.asm"
+%include "./librarys/printh.asm"
 
 ;varibles
-STRING: db 'Boot initilization complete!', 0
+LOADING: db 'Loading...finished', 0x0a, 0x0d, 0
+PHRASE: db 'Orange juice cringe', 0x0a, 0x0d, 0
+NEWLINE: db '', 0x0a, 0x0d, 0x0a, 0x0d, 0
 
 ;padding and magic number
 times 510-($-$$) db 0
