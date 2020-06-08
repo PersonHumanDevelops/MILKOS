@@ -53,7 +53,7 @@ jmp $
 %include "./librarys/printh.asm"
 
 ;varibles
-LOADING: db 'Loading...finished', 0x0a, 0x0d, 0
+LOADING: db 'Loading MILKOS...finished', 0x0a, 0x0d, 0
 PHRASE: db 'Orange juice cringe', 0x0a, 0x0d, 0
 NEWLINE: db '', 0x0a, 0x0d, 0x0a, 0x0d, 0
 

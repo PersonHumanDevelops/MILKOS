@@ -1,0 +1,43 @@
+This is the MILKOS extras page:
+
+How can I edit MILKOS:
+	
+	To edit MILKOS it is recomended that you use linux
+	although it can be achived on windows with remaking
+	of some scripts and etc.
+	
+	Before we start here are some denpendantcies that
+	should be installed:
+	
+		-nasm
+		-gcc
+		-make
+		-qemu 
+		-qemu-system-x86
+		
+		Theese can all be installed with: 
+			
+			on ubuntu sudo apt-get install pacage name
+	
+	After you have installed all the packages above open boot.asm.
+	It may look overwhelming but the average user should only add code in
+	the section between ;code and jmp $ as well as the section between 
+	;varibles and the end of the script.
+	
+	Varibles:
+		
+		To create strings type in varibleName: db 'text', 0 
+		between ;varibles and the end of the script.
+		
+		To create strings with newlines afterwords type in 
+		varibleName: db 'text', 0x0a, 0x0d, 0 
+		between ;varibles and the end of the script.
+		
+	Printing strings:
+		
+		To print strings type in mov si, STRINGVARIBLE followed by
+		call printf make sure both are in the section between ;code and 			jmp $.
+		
+This os is missing quit a few features so dont be afraid to add more if your experienced in assembly and if you want dm us your addition on reddit my username is ThatCrazyAlpacaGuy. Thank you for checking out MILKOS!
+
+Ps.Sorry about the quality of extras.txt it was something I threw together in a couple of minutes.
