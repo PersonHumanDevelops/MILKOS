@@ -6,20 +6,7 @@ How can I edit MILKOS:
 	although it can be achived on windows with remaking
 	of some scripts and etc.
 	
-	Before we start here are some denpendantcies that
-	should be installed:
-	
-		-nasm
-		-gcc
-		-make
-		-qemu 
-		-qemu-system-x86
-		
-		Theese can all be installed with: 
-			
-			on ubuntu sudo apt-get install pacage name
-	
-	After you have installed all the packages above open boot.asm.
+	First open boot.asm.
 	It may look overwhelming but the average user should only add code in
 	the section between ;code and jmp $ as well as the section between 
 	;varibles and the end of the script.
@@ -38,6 +25,25 @@ How can I edit MILKOS:
 		To print strings type in mov si, STRINGVARIBLE followed by
 		call printf make sure both are in the section between ;code and 			jmp $.
 		
-This os is missing quit a few features so dont be afraid to add more if your experienced in assembly and if you want dm us your addition on reddit my username is ThatCrazyAlpacaGuy. Thank you for checking out MILKOS!
+How can I compile MILKOS:
+
+	Before we start here are some denpendantcies that
+	should be installed:
+	
+		-nasm
+		-gcc
+		-make
+		-qemu 
+		-qemu-system-x86
+		
+		Theese can all be installed with: 
+			
+			on ubuntu sudo apt-get install pacage name
+	
+	After theese packages have been installed you can compile with:
+	make and run with: make run!
+	
+		
+This os is missing quit a few features so dont be afraid to add more if your experienced in assembly and if you want to send us your addition email me at haydenamun@gmail.com! Thank you for checking out MILKOS!
 
 Ps.Sorry about the quality of extras.txt it was something I threw together in a couple of minutes.
